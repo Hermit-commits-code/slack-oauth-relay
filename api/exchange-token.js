@@ -17,7 +17,7 @@ export default async function handler(req, res) {
   const client_id = "9599374319411.9591125131255";
   const client_secret = "fadb8e2bd5f8a3c357822c01e77d47d0";
   const redirect_uri =
-    "https://slack-oauth-relay-8bm11eodj-joseph-chus-projects.vercel.app/oauth/callback";
+    "https://slack-oauth-relay-production.up.railway.app/oauth/callback";
   const code = req.body.code;
   if (!code) {
     res.status(400).json({ error: "Missing code" });
