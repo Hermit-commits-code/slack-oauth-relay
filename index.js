@@ -1,4 +1,5 @@
 require("dotenv").config();
+console.log("Relay server starting up");
 const express = require("express");
 const cors = require("cors");
 const app = express();
