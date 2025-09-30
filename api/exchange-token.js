@@ -14,10 +14,9 @@ export default async function handler(req, res) {
 
   const fetch = (...args) =>
     import("node-fetch").then(({ default: fetch }) => fetch(...args));
-  const client_id = "9599374319411.9591125131255";
-  const client_secret = "fadb8e2bd5f8a3c357822c01e77d47d0";
-  const redirect_uri =
-    "https://slack-oauth-relay-production.up.railway.app/oauth/callback";
+  const client_id = process.env.SLACK_CLIENT_ID;
+  const client_secret = process.env.SLACK_CLIENT_SECRET;
+  const redirect_uri = process.env.SLACK_REDIRECT_URI;
   const code = req.body.code;
   if (!code) {
     res.status(400).json({ error: "Missing code" });
