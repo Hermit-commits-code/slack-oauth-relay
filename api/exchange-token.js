@@ -18,6 +18,10 @@ export default async function handler(req, res) {
   const client_secret = process.env.SLACK_CLIENT_SECRET;
   const redirect_uri = process.env.SLACK_REDIRECT_URI;
   const code = req.body.code;
+  console.log("client_id:", client_id);
+  console.log("client_secret:", client_secret ? "[set]" : "[missing]");
+  console.log("redirect_uri:", redirect_uri);
+  console.log("code:", code);
   if (!code) {
     res.status(400).json({ error: "Missing code" });
     return;
